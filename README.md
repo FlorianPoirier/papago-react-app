@@ -13,3 +13,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+## How to run proxy server
+
+In order to make API call, we must start a proxy server acting as a middleware.
+
+### `node src/proxy-server.js`
