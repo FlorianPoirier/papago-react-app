@@ -10,9 +10,14 @@ function Translator() {
     const [sourceLang, setlangSource] = useState("en");
     // eslint-disable-next-line
     const [targetLang, setTarget] = useState("ko");
+    const [translation, setTranslation] = useState("");
 
-    const handleSourceLang = (newSourceLanguage) => {
-        setlangSource(newSourceLanguage);
+    const handleSourceLang = (newLanguageChoice) => {
+        setlangSource(newLanguageChoice);
+    }
+
+    const handleTargetLang = (newLanguageChoice) => {
+        setTarget(newLanguageChoice);
     }
 
     const handleTraduction = () => {
@@ -26,10 +31,12 @@ function Translator() {
         axios.post(baseURL, params)
             .then(response => {
                 const result = response.data.message.result.translatedText;
+                setTranslation(result);
                 console.log(result);
             })
             .catch(error => {
                 console.error('Query error: ', error);
+                //TODO : flag to prevent mistranslation exemple: french to spanish is impossible with the api
             });
     }
 
@@ -48,7 +55,9 @@ function Translator() {
             <button name="translate" onClick={handleTraduction}>Translate</button>
             <p>Select source language:</p>
             <SelectSourceLang onSelect={handleSourceLang}></SelectSourceLang>
-            
+            <p>Select target language:</p>
+            <SelectSourceLang onSelect={handleTargetLang}></SelectSourceLang>
+            <h2>Result : {translation}</h2>
         </>
     );
 }

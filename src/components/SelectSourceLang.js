@@ -6,10 +6,10 @@ function SelectSourceLang ({ onSelect }) {
     const [choice, setChoice] = useState('');
 
     const handleChoiceChange = (event) => {
-        const newSourceLanguage = event.target.value;
+        const newLanguageChoice = event.target.value;
 
-        setChoice(newSourceLanguage);
-        onSelect(newSourceLanguage);
+        setChoice(newLanguageChoice);
+        onSelect(newLanguageChoice);
     }
 
     return (
