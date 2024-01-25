@@ -1,5 +1,5 @@
 import React from "react";
-import Translator from "./components/Translator.js";
+import Translator from "./components/Translator/Translator.js";
 
 function App() {
   return (

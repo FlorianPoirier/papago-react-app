@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import SelectSourceLang from "./SelectSourceLang.js";
+import SelectChoiceLang from "../SelectSourceLang/SelectChoiceLang.js";
 
 function Translator() {
     const baseURL = 'http://localhost:3001/api/translate';
@@ -54,9 +54,9 @@ function Translator() {
             </div>
             <button name="translate" onClick={handleTraduction}>Translate</button>
             <p>Select source language:</p>
-            <SelectSourceLang onSelect={handleSourceLang}></SelectSourceLang>
+            <SelectChoiceLang onSelect={handleSourceLang}></SelectChoiceLang>
             <p>Select target language:</p>
-            <SelectSourceLang onSelect={handleTargetLang}></SelectSourceLang>
+            <SelectChoiceLang onSelect={handleTargetLang}></SelectChoiceLang>
             <h2>Result : {translation}</h2>
         </>
     );

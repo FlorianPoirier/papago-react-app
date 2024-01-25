@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { langList } from "./data/langList.js";
+import { langList } from "../data/langList.js";
 
-function SelectSourceLang ({ onSelect }) {
+function SelectChoiceLang ({ onSelect }) {
 
     const [choice, setChoice] = useState('');
 
@@ -26,4 +26,4 @@ function SelectSourceLang ({ onSelect }) {
     )
 }
 
-export default SelectSourceLang;
+export default SelectChoiceLang;
