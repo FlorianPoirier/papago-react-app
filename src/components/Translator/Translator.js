@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import SelectChoiceLang from "../SelectSourceLang/SelectChoiceLang.js";
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 function Translator() {
     const baseURL = 'http://localhost:3001/api/translate';
@@ -18,6 +19,10 @@ function Translator() {
 
     const handleTargetLang = (newLanguageChoice) => {
         setTarget(newLanguageChoice);
+    }
+
+    const handleEmpty = () => {
+        setText("");
     }
 
     const handleTraduction = () => {
@@ -49,10 +54,19 @@ function Translator() {
             <div style={{ marginLeft: '20px' }}>
                 <input type="text"
                     style={{ width: '600px', height: '340px', verticalAlign: 'top' }}
+                    value={text}
                     placeholder="Please write here" onChange={e => setText(e.target.value)}>
+
                 </input>
+                <button name="empty" onClick={handleEmpty}>Empty</button>
             </div>
             <button name="translate" onClick={handleTraduction}>Translate</button>
+            <CopyToClipboard text={text} onCopy={(_text, result) => console.log(result)}>
+                <button>Copy text</button>
+            </CopyToClipboard>
+            <CopyToClipboard text={translation} onCopy={(_translation, result) => console.log(result)}>
+                <button>Copy translation</button>
+            </CopyToClipboard>
             <p>Select source language:</p>
             <SelectChoiceLang onSelect={handleSourceLang}></SelectChoiceLang>
             <p>Select target language:</p>
