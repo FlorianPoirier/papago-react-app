@@ -19,3 +19,9 @@ You may also see any lint errors in the console.
 In order to make API call, we must start a proxy server acting as a middleware.
 
 ### `node src/proxy-server.js`
+
+## How to use
+
+Write your text in the input field and select the source and target language you want your text to be translated to.
+
+The Papago API does not allow all language combination for translation, for example you can not translate from French to Spanish.
