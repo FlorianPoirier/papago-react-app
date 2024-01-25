@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { langList } from "../data/langList.js";
 
-function SelectChoiceLang ({ onSelect }) {
+function SelectChoiceLang ({ onSelect, langSelectText }) {
 
     const [choice, setChoice] = useState('');
 
@@ -15,7 +15,7 @@ function SelectChoiceLang ({ onSelect }) {
     return (
         <>
             <select value={choice} onChange={handleChoiceChange}>
-                <option value="">Choose a source language</option>
+                <option value="">{langSelectText}</option>
                     {langList.map((source) => (
                         <option key={source.value} value={source.value}>
                             {source.label}

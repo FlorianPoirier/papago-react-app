@@ -68,9 +68,11 @@ function Translator() {
                 <button>Copy translation</button>
             </CopyToClipboard>
             <p>Select source language:</p>
-            <SelectChoiceLang onSelect={handleSourceLang}></SelectChoiceLang>
+            <SelectChoiceLang onSelect={handleSourceLang}
+                              langSelectText={"Choose source language"}></SelectChoiceLang>
             <p>Select target language:</p>
-            <SelectChoiceLang onSelect={handleTargetLang}></SelectChoiceLang>
+            <SelectChoiceLang onSelect={handleTargetLang}
+            langSelectText={"Choose target language"}></SelectChoiceLang>
             <h2>Result : {translation}</h2>
         </>
     );
