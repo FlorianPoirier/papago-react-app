@@ -2,6 +2,8 @@
 
 This react project uses Naver Papago API to translate in/from Korean to a target language (eg. French, English).
 
+In order to get an API key, please see the [wiki](https://github.com/FlorianPoirier/papago-react-app/wiki/Get-Naver-API-keys)
+
 ## How to run
 
 In the project directory, you can run:
